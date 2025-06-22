@@ -23,4 +23,6 @@ public class TaskDTO {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private Set<Label> taskLabels;
+    private Set<UUID> attachmentIds;
+    private Set<UUID> commentIds;
 }

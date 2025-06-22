@@ -21,4 +21,8 @@ public class ProjectDTO {
     private LocalDateTime updatedAt;
     private UUID workspaceId;
     private Set<Label> projectLabels;
+    private Set<UUID> boardIds;
+    private Set<UUID> taskIds;
+    private Set<UUID> invitationIds;
+    private Set<UUID> githubIntegrationIds;
 }

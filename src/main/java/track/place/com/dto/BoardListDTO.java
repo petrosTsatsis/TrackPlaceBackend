@@ -2,6 +2,7 @@ package track.place.com.dto;
 
 import lombok.Data;
 import java.time.LocalDateTime;
+import java.util.Set;
 import java.util.UUID;
 
 @Data
@@ -12,4 +13,5 @@ public class BoardListDTO {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private UUID boardId;
+    private Set<UUID> taskIds;
 }
