@@ -72,7 +72,7 @@ public class Project {
     @OneToMany(mappedBy = "project")
     private Set<Task> tasks = new HashSet<>();
 
-    @OneToMany(mappedBy = "project")
+    @Enumerated(EnumType.STRING)
     private Set<Label> projectLabels = new HashSet<>();
 
     @OneToMany(mappedBy = "project")
