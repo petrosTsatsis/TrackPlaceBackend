@@ -1,5 +1,6 @@
 services:
   db:
+    container_name: 'track_place_db'
     image: 'postgres:16'
     restart: on-failure:3
     environment:
@@ -12,6 +13,7 @@ services:
       - db_data:/var/lib/postgresql/data
 
   backend:
+    container_name: 'track_place_backend'
     build:
       context: .
       dockerfile: Dockerfile
