@@ -33,16 +33,12 @@ public class User {
     @Column(unique = true, nullable = false)
     private String email;
 
-    @NotBlank(message = "Password hash is required")
-    @Column(nullable = false)
-    private String passwordHash;
-
     @NotBlank(message = "Name is required")
     @Size(min = 2, max = 100, message = "Name must be between 2 and 100 characters")
     @Column(nullable = false)
     private String name;
 
-    @Column(columnDefinition = "json")
+    @Column()
     private String notificationPreferences;
 
     @CreationTimestamp

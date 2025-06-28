@@ -23,7 +23,6 @@ public class UserMapperTest {
 
     @Test
     public void testMapUserToUserDTO() {
-        // Arrange
         UUID userId = UUID.randomUUID();
         LocalDateTime now = LocalDateTime.now();
 
@@ -31,7 +30,6 @@ public class UserMapperTest {
         user.setId(userId);
         user.setEmail("test@example.com");
         user.setName("Test User");
-        user.setPasswordHash("hashed_password");
         user.setRole(Role.ADMIN);
         user.setNotificationPreferences("{\"emailNotifications\": true}");
         user.setCreatedAt(now);
@@ -49,9 +47,6 @@ public class UserMapperTest {
         assertEquals(now, userDTO.getCreatedAt());
         assertEquals(now, userDTO.getUpdatedAt());
         assertEquals(Role.ADMIN, userDTO.getRole());
-
-        // Password hash should not be included in DTO
-        // Since the field doesn't exist in UserDTO, this is automatically handled
     }
 
     @Test
@@ -81,9 +76,6 @@ public class UserMapperTest {
         assertEquals(now, user.getCreatedAt());
         assertEquals(now, user.getUpdatedAt());
         assertEquals(Role.MEMBER, user.getRole());
-
-        // Password hash would be null when converting from DTO to Entity
-        assertNull(user.getPasswordHash());
     }
 
 }

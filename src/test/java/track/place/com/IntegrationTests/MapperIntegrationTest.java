@@ -33,7 +33,6 @@ public class MapperIntegrationTest {
         user.setId(UUID.randomUUID());
         user.setEmail("integration@test.com");
         user.setName("Integration Test");
-        user.setPasswordHash("integration_password_hash");
         user.setRole(Role.MEMBER);
         user.setCreatedAt(LocalDateTime.now());
         user.setUpdatedAt(LocalDateTime.now());
